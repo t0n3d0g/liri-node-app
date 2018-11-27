@@ -21,30 +21,35 @@ var info = process.argv.slice(3).join(" ");
 
 // Switch was introduced by my tutor to simplify choosing between
 // various functions including cases where a request has no attributes
+switchStatement()
+function switchStatement(){
+    switch(command){
+        case "spotify-this-song":
+            if(info){
+                songSearch(info);
+            } else {songSearch("Ace of Spades")}
+        break;
 
-switch(command){
-    case "spotify-this-song":
-    if(info){
-    songSearch(info);
-    } else {songSearch("Ace of Spades")}
-    break;
+        case "concert-this":
+            if(info){
+                concertSearch(info);
+            } else {console.log ("Please select an Artist to search for their Concerts")}
+        break;
 
-    case "concert-this":
-    if(info){
-        concertSearch(info);
-    } else {console.log ("Please select an Artist to search for their Concerts")}
-    break;
+        case "movie-this":
+            if(info){
+                movieSearch(info);
+            } else {movieSearch("Mr. Nobody")}
+        break;
 
-    case "movie-this":
-    if(info){
-    movieSearch(info);
-    } else {movieSearch("Mr. Nobody")}
-    break;
+        case "do-what-it-says":
+            doWhatItSays();
+            break;
 
-    default:
-    console.log("default state");
+        default:
+        console.log("default state");
+    }
 }
-
 // Example: concert-this <artist/band name> returns
 // Name of the venue, Venue location, Date of the Event
 // (use moment to format this as "MM/DD/YYYY")
@@ -110,16 +115,18 @@ function movieSearch (title) {
 
 
 // Example: do-what-it-says
-//  Reads in a random line from random.txt and provides output
-// function doWhatItSays (); {
-//     fs.readFile('random.txt', 'utf8', function(err, res){
-//         var whatItSays = res.split(",");
-        
-//         liriBot(whatItSays[0],whatItSays[1],);
-//         if(err){
-//             console.log(chalk`
-// {red There's something wrong with your txt file.}
-//             `)
-//         }
-//     })
-// }
+//  Reads in a line from random.txt and provides output
+function doWhatItSays () {
+    fs.readFile('random.txt', 'utf8', function(err, res){
+        var whatItSays = res.split(",");
+        console.log(whatItSays);
+        command = whatItSays[0];
+        info = whatItSays[1];
+        switchStatement();
+        // liriBot(whatItSays[0],whatItSays[1],);
+        if(err){
+            console.log("There's something wrong with your txt file.")
+            
+        }
+    })
+}
