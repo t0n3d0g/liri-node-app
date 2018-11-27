@@ -11,6 +11,8 @@ const moment = require("moment");
 
 const keys = require("./keys.js");
 const spotify = new Spotify(keys.spotify);
+const fs = require("fs");
+
 
 // Inputs user command and info for Liri
 
@@ -108,3 +110,16 @@ function movieSearch (title) {
 
 
 // Example: do-what-it-says
+//  Reads in a random line from random.txt and provides output
+// function doWhatItSays (); {
+//     fs.readFile('random.txt', 'utf8', function(err, res){
+//         var whatItSays = res.split(",");
+        
+//         liriBot(whatItSays[0],whatItSays[1],);
+//         if(err){
+//             console.log(chalk`
+// {red There's something wrong with your txt file.}
+//             `)
+//         }
+//     })
+// }
