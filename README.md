@@ -13,14 +13,17 @@ Given a movie, it provides information about the movie's plot, cast, etc.
 This is node-based application which must be run from the command line.
 To use the concert function, type:
   node liri.js concert-this <artist/band name here>
+  
   Example: liri.js concert-this Gary Clark Jr.
   
 To use the song function, type:
   node liri.js spotify-this-song '<song name here>'
+  
   Example: liri.js spotify-this-song Hello
   
 To use the movie function, type:
   node liri.js movie-this '<movie name here>'
+  
   Example: node liri.js movie-this 2001
 
 ## Where users can get help with your project
