@@ -11,16 +11,14 @@ LIRI provides 3 types of useful information.
 
 ## How users can get started with the project
 This is node-based application which must be run from the command line.
-To use the concert function, type:
-  
+
+To use the concert function, type:  
   *Example: liri.js concert-this Gary Clark Jr.*
   
 To use the song function, type:
-  
   *Example: liri.js spotify-this-song Hello*
   
 To use the movie function, type:
-  
   *Example: node liri.js movie-this 2001*
 
 ## Where users can get help with your project
